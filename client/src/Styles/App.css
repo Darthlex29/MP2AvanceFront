@@ -1,0 +1,202 @@
+.App {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(79deg, #f9ad29, #eb0953, #630748);
+}
+
+.Loggeo {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(79deg, #f9ad29, #eb0953, #630748);
+}
+
+.contenedor-login-auth,
+.login-form,
+.registro-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-login-auth,
+.contenedor-registro-auth {
+  padding: 5rem;
+  border: 1px solid #2a0101;
+  border-radius: 10px;
+  margin: 0.5rem;
+  background-color: aliceblue;
+}
+
+label {
+  text-align: center;
+  padding: 0.25rem 0;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.btnIngreso,
+.btnRegistro,
+.btnUnirme,
+.btnCerrarsesion,
+.btnInvitar {
+  cursor: pointer;
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    #c21500 0%,
+    #ffc500 51%,
+    #c21500 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 5px #eee;
+  border-radius: 10px;
+  /* display: block; */
+}
+
+.Linkbtn {
+  background-color: aliceblue;
+  border: none;
+  background: none;
+  padding: 15px 45px;
+  cursor: pointer;
+  color: black;
+  text-decoration: underline;
+}
+
+.Menu {
+  width: 100vw;
+  height: 100vh;
+}
+
+.Menu header {
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  font-size: x-large;
+  color: white;
+}
+
+.Menu section {
+  /* border: 1px solid whitesmoke; */
+  margin: 5% 10%;
+  height: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Menu .fotos {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  flex-direction: column;
+  height: 100%;
+}
+
+.Menu .fotos .foto {
+  border: 1px solid white;
+  padding: 100% 300%;
+}
+
+.Menu .newProyect button{
+  background-color: transparent;
+  border: 1px solid white; 
+  padding: 5%;
+  cursor: pointer;
+}
+
+.Draw {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.Draw section {
+  display: flex;
+  justify-content: end;
+  margin: 1% 5%;
+}
+
+.Draw .canvas {
+  display: flex; 
+  justify-content: space-around;
+  color: white;
+}
+.Draw .canvas .drawing {
+  margin-right: 1%;
+}
+
+.Draw .canvas .ChromePicker {
+  margin: 10% 0;
+
+}
+
+.Mensajes {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  
+/*   border: 1px solid #ccc; */
+/*   border-radius: 4px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.Mensajes h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.Mensajes form {
+  margin-bottom: 20px;
+}
+
+.Mensajes input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.Mensajes button {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Mensajes .CuadroMensajes{
+  background-color: #333; /* Color de fondo oscuro */
+}
+
+.Mensajes .mensaje {
+  
+  color: white; /* Color de la letra blanca */
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  text-align: left; /* Alinea los mensajes a la izquierda */
+}
+
+.Mensajes .mensaje-usuario {
+  text-align: right; /* Alinea los mensajes del usuario a la derecha */
+}

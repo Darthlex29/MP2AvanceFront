@@ -1,0 +1,10 @@
+.App{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: linear-gradient(79deg, #f9ad29, #eb0953, #630748);
+    
+}
