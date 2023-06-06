@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useMemo, useState } from "react";
 import io from "socket.io-client";
 import { ChromePicker } from "react-color";
-import "../Styles/App.css"
+import "../Styles/App.css";
 
 const socket = io("http://localhost:4000");
 
-function Paint({ width, height, name }) {
+function Paint({ width, height, name, codigo }) {
   const [color, setColor] = useState("#000");
   const [lineWidth, setLineWidth] = useState(2);
   const [reiniciar, setReiniciar] = useState(false);
@@ -22,6 +22,7 @@ function Paint({ width, height, name }) {
       color: color,
       lineWidth: lineWidth,
       reiniciar: false,
+      codigo: codigo,
     };
   }, [reiniciar]);
 
@@ -37,6 +38,7 @@ function Paint({ width, height, name }) {
         originColor: mouse.color,
         originWidth: mouse.lineWidth,
         originReiniciar: mouse.reiniciar,
+        codigo: mouse.codigo,
       });
       mouse.move = false;
     }
@@ -88,14 +90,16 @@ function Paint({ width, height, name }) {
     canvas.addEventListener("mouseup", handleMouseUp);
 
     socket.on("drawLine", (data) => {
-      if (data) console.log("YO RECIBO");
-      let line = data.line;
-      ctx.beginPath();
-      ctx.lineWidth = data.originWidth;
-      ctx.strokeStyle = data.originColor;
-      ctx.moveTo(line[0].x, line[0].y);
-      ctx.lineTo(line[1].x, line[1].y);
-      ctx.stroke();
+      if (data && data.codigo === mouse.codigo) {
+        console.log("YO RECIBO");
+        let line = data.line;
+        ctx.beginPath();
+        ctx.lineWidth = data.originWidth;
+        ctx.strokeStyle = data.originColor;
+        ctx.moveTo(line[0].x, line[0].y);
+        ctx.lineTo(line[1].x, line[1].y);
+        ctx.stroke();
+      }
     });
 
     // Limpia los eventos al desmontar el componente
@@ -111,7 +115,7 @@ function Paint({ width, height, name }) {
     <div className="canvas">
       <div>
         <h2>{name}</h2>
-{/*         <button>
+        {/*         <button>
           X
         </button> */}
       </div>

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 const socket = io("http://localhost:4000");
 
-function Mensajero() {
+function Mensajero(codigo) {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 

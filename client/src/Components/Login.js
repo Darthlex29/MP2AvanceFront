@@ -25,7 +25,7 @@ export const Login = (props) => {
     usuarioValidado.then((result) => {
       console.log(result);
       if(result.message === "Usuario encontrado"){
-        navigate("/menu", { state: { prop1: result.name} })
+        navigate("/menu", { state: { prop1: result.name, prop2: usuario.email, prop3: usuario.pss} })
       }else{
         Swal.fire({
           icon: 'error',
