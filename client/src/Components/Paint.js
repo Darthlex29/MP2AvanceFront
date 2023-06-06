@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useMemo, useState } from "react";
 import io from "socket.io-client";
 import { ChromePicker } from "react-color";
+import "../Styles/App.css"
 
 const socket = io("http://localhost:4000");
 
@@ -109,7 +110,7 @@ function Paint({ width, height, name }) {
   return (
     <div className="canvas">
       <div>
-        {name}
+        <h2>{name}</h2>
 {/*         <button>
           X
         </button> */}
@@ -146,6 +147,7 @@ function Paint({ width, height, name }) {
           onClick={(e) => {
             setReiniciar(true);
           }}
+          className="btnReinicio"
         >
           Reiniciar Canvas
         </button>

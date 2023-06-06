@@ -10,7 +10,7 @@ function Mensajero() {
 
   useEffect(() => {
     const receiveMessage = (message) => {
-      setMessages([...messages, message]);
+      setMessages([message, ...messages]);
     };
     socket.on("message", receiveMessage);
 
